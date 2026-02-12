@@ -3,6 +3,16 @@ package model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/*
+ * Represents a collection of LogEntry objects.
+ * A LifeLog stores and manages an arbitrary number
+ * of activity entries, and provides functionality to
+ * add, remove, edit, and query logged activities.
+ *
+ * The LifeLog serves as the central model of the
+ * application and maintains the state of all entries.
+ */
+
 public class LifeLog {
     private ArrayList<LogEntry> entries;
 

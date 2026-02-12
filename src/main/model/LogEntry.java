@@ -2,6 +2,15 @@ package model;
 
 import java.time.LocalDate;
 
+/*
+ * Represents a single record in the LifeLog application.
+ * A LogEntry captures information about one logged activity,
+ * including its title, category, optional description,
+ * number of hours spent, and the date on which it occurred.
+ *
+ * LogEntry objects are managed by the LifeLog class.
+ */
+
 public class LogEntry {
     private String title;
     private String category;
