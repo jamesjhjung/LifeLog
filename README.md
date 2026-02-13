@@ -13,12 +13,12 @@ This application is intended for **general users** who want a simple and flexibl
 
 ## User Stories
 
-- **As a user, I want to be able to add a new log entry to my LifeLog**, specifying the date, category, short description, and an optional numeric value, so that I can record anything I do during the day.  
+- **As a user, I want to be able to add a new log entry to my LifeLog**, specifying the date, category, short description, and an optional numeric value, so that I can record anything I do during the day.
+
+- **As a user, I want to be able to remove a log entry from my LifeLog**, so that I can correct mistakes or delete entries I no longer want to keep.  
 
 - **As a user, I want to be able to view a list of all log entries in my LifeLog**, so that I can review what I have recorded over time.  
 
 - **As a user, I want to be able to view log entries filtered by category or by date**, so that I can focus on specific types of activities or a particular day.  
-
-- **As a user, I want to be able to remove a log entry from my LifeLog**, so that I can correct mistakes or delete entries I no longer want to keep.  
 
 - **As a user, I want to be able to see summary statistics about my log entries**, such as totals and averages by category, so that I can better understand my daily habits and patterns.

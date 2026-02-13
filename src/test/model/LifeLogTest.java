@@ -98,6 +98,22 @@ public class LifeLogTest {
     }
 
     @Test
+    void testGetEntriesByDate() {
+        testLog.addEntry(e1);
+        testLog.addEntry(e2);
+        testLog.addEntry(e3);
+
+        ArrayList<LogEntry> eleventhEntries = testLog.getEntriesByDate(LocalDate.of(2026, 2, 11));
+        assertEquals(2, eleventhEntries.size());
+        assertEquals(e2, eleventhEntries.get(0));
+        assertEquals(e3, eleventhEntries.get(1));
+
+        ArrayList<LogEntry> tenthEntries = testLog.getEntriesByDate(LocalDate.of(2026, 2, 10));
+        assertEquals(1, tenthEntries.size());
+        assertEquals(e1, tenthEntries.get(0));
+    }
+
+    @Test
     void testGetTotalHours() {
         assertEquals(0, testLog.getTotalHours());
         testLog.addEntry(e1);
@@ -107,7 +123,7 @@ public class LifeLogTest {
     }
 
     @Test
-    void testGetToalHoursByCategory() {
+    void testGetTotalHoursByCategory() {
         testLog.addEntry(e1);
         testLog.addEntry(e2);
         testLog.addEntry(e3);

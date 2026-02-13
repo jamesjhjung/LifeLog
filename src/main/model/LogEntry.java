@@ -29,11 +29,6 @@ public class LogEntry {
         this.date = date;
     }
 
-    // EFFECTS: returns true if this.category matches given category
-    public boolean matchesCategory(String category) {
-        return this.category.equals(category);
-    }
-
     // EFFECTS: returns string representation of this entry
     public String toString() {
         String entryString = 

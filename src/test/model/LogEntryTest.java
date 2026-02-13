@@ -32,12 +32,6 @@ public class LogEntryTest {
     }
 
     @Test
-    void testMatchesCategory() {
-        assertTrue(testEntry.matchesCategory("Health"));
-        assertFalse(testEntry.matchesCategory("work"));
-    }
-
-    @Test
     void testToString() {
         assertEquals("Gym | Health | Back Day | 1.0 Hours | 2026-02-12", testEntry.toString());
     }

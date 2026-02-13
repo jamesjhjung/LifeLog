@@ -35,6 +35,7 @@ public class LifeLog {
             LogEntry e = entries.get(i);
             if (e.getTitle().equals(title) && e.getDate().equals(date)) {
                 entries.remove(i);
+                break;
             }
         }
     }
@@ -54,6 +55,18 @@ public class LifeLog {
             }
         }
         return categoryEntries;
+    }
+
+    // EFFECTS: returns list of entries added in
+    //          order of given date in log
+    public ArrayList<LogEntry> getEntriesByDate(LocalDate date) {
+        ArrayList<LogEntry> dateEntries = new ArrayList<>();
+        for (LogEntry e : entries) {
+            if (e.getDate().equals(date)) {
+                dateEntries.add(e);
+            }
+        }
+        return dateEntries;
     }
 
     // EFFECTS: returns total hours spent across 
