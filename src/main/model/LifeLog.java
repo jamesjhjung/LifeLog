@@ -18,42 +18,63 @@ public class LifeLog {
 
     // EFFECTS: construcs a LifeLog object
     public LifeLog() {
-        // stub
+        entries = new ArrayList<>();
     }
 
     // MODIFIES: this
     // EFFECTS: adds given entry to log
     public void addEntry(LogEntry entry) {
-        // stub
+        entries.add(entry);
     }
 
     // MODIFIES: this
     // EFFECTS: removes first entry with matching given title
     //          and date, does nothing if no match is found
     public void removeEntry(String title, LocalDate date) {
-        // stub
+        for (int i = 0; i < entries.size(); i++) {
+            LogEntry e = entries.get(i);
+            if (e.getTitle().equals(title) && e.getDate().equals(date)) {
+                entries.remove(i);
+            }
+        }
     }
 
     // EFFECTS: returns list of entries in added order
     public ArrayList<LogEntry> getEntries() {
-        return null; // stub
+        return entries;
     }
 
     // EFFECTS: returns list of entries added in
     //          order of given category in log
     public ArrayList<LogEntry> getEntriesByCategory(String category) {
-        return null; // stub
+        ArrayList<LogEntry> categoryEntries = new ArrayList<>();
+        for (LogEntry e : entries) {
+            if (e.getCategory().equals(category)) {
+                categoryEntries.add(e);
+            }
+        }
+        return categoryEntries;
     }
 
     // EFFECTS: returns total hours spent across 
     //          all entries
     public double getTotalHours() {
-        return 0; // stub
+        double totalHours = 0.0;
+        for (LogEntry e : entries) {
+            totalHours += e.getHours();
+        }
+        return totalHours;
     }
     
     // EFFECTS: returns total hours spent in given
     //          category, returns 0 if no match
     public double getTotalHoursByCategory(String category) {
-        return 0; // stub
+        double categoryTotalHours = 0.0;
+        for (LogEntry e : entries) {
+            if (e.getCategory().equals(category)) {
+                categoryTotalHours += e.getHours();
+            }
+        }
+        return categoryTotalHours;
     }    
 }

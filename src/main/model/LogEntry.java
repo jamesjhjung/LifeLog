@@ -22,17 +22,27 @@ public class LogEntry {
     //           hours >= 0
     // EFFECTS: constructs a LogEntry object with given fields
     public LogEntry(String title, String category, String description, double hours, LocalDate date) {
-        // stub
+        this.title = title;
+        this.category = category;
+        this.description = description;
+        this.hours = hours;
+        this.date = date;
     }
 
     // EFFECTS: returns true if this.category matches given category
     public boolean matchesCategory(String category) {
-        return false; // stub
+        return this.category.equals(category);
     }
 
     // EFFECTS: returns string representation of this entry
     public String toString() {
-        return null; // stub
+        String entryString = 
+        title + " | " + 
+        category + " | " + 
+        description + " | " + 
+        Double.toString(hours) + " Hours" 
+        + " | " + date.toString();
+        return entryString;
     }
 
     public String getTitle() {
