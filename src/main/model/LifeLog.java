@@ -45,15 +45,15 @@ public class LifeLog {
         return null; // stub
     }
 
-    // EFFECTS: returns total hours spent in given
-    //          category, returns 0 if no match
-    public double getTotalHoursByCategory(String category) {
-        return 0; // stub
-    }
-
     // EFFECTS: returns total hours spent across 
     //          all entries
     public double getTotalHours() {
         return 0; // stub
     }
+    
+    // EFFECTS: returns total hours spent in given
+    //          category, returns 0 if no match
+    public double getTotalHoursByCategory(String category) {
+        return 0; // stub
+    }    
 }
