@@ -3,6 +3,8 @@ import ca.ubc.cs.ExcludeFromJacocoGeneratedReport;
 
 import model.LifeLog;
 import model.LogEntry;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -13,9 +15,18 @@ public class LifeLogApp {
     private LifeLog lifeLog;
     private Scanner scanner;
 
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
+
+    private static final String JSON_STORE = "./data/lifelog.json";
+
     public LifeLogApp() {
         lifeLog = new LifeLog();
         scanner = new Scanner(System.in);
+
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
+
         runApp();
     }
 
@@ -45,6 +56,12 @@ public class LifeLogApp {
                     viewTotalHours();
                     break;
                 case "7":
+                    saveLifeLog();
+                    break;
+                case "8":
+                    loadLifeLog();
+                    break;
+                case "9":
                     running = false;
                     break;
                 default:
@@ -61,7 +78,9 @@ public class LifeLogApp {
         System.out.println("4 - View Entries by Date");
         System.out.println("5 - View Entries by Category");
         System.out.println("6 - View Total Hours");
-        System.out.println("7 - Quit");
+        System.out.println("7 - Save LifeLog");
+        System.out.println("8 - Load LifeLog");
+        System.out.println("9 - Quit");
         System.out.print("Select option: ");
     }
 
@@ -128,5 +147,25 @@ public class LifeLogApp {
         double totalHours = lifeLog.getTotalHours();
         System.out.println("Total hours logged: " + totalHours);
 
+    }
+
+    private void saveLifeLog() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(lifeLog);
+            jsonWriter.close();
+            System.out.println("LifeLog saved successfully.");
+        } catch (Exception e) {
+            System.out.println("Unable to save LifeLog.");
+        }
+    }
+
+    private void loadLifeLog() {
+        try {
+            lifeLog = jsonReader.read();
+            System.out.println("LifeLog loaded successfully.");
+        } catch (Exception e) {
+            System.out.println("Unable to load LifeLog.");
+        }
     }
 }
