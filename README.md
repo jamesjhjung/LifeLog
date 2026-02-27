@@ -24,3 +24,7 @@ This application is intended for **general users** who want a simple and flexibl
 - **As a user, I want to be able to view the total number of hours of all log entries in my LifeLog**, so that I can track how much time I've spent across all activities.
 
 - **As a user, I want to be able to see summary statistics about my log entries**, such as totals and averages by category, so that I can better understand my daily habits and patterns.
+
+- **As a user, I want to have the option to save my entire LifeLog to a file**, so that I can resume tracking my activities later.
+
+- **As a user, I want to have the option to load my previously saved LifeLog**, so that I can continue where I left off.
