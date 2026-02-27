@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "title": "Gym",
+      "category": "Health",
+      "description": "Chest Day",
+      "hours": 2.0,
+      "date": "2026-02-10"
+    },
+    {
+      "title": "Study",
+      "category": "School",
+      "description": "CPSC-210",
+      "hours": 3.5,
+      "date": "2026-02-11"
+    }
+  ]
+}
