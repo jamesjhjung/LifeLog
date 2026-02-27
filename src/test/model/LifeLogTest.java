@@ -1,4 +1,5 @@
 package model;
+import ca.ubc.cs.ExcludeFromJacocoGeneratedReport;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+@ExcludeFromJacocoGeneratedReport
 public class LifeLogTest {
 
     private LifeLog testLog;

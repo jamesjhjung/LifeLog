@@ -15,7 +15,7 @@ import model.LogEntry;
 
 // Represents a reader that reads LifeLog data from JSON stored in file
 public class JsonReader {
-    String source;
+    private String source;
 
     // EFFECTS: constructs reader to read from source file
     public JsonReader(String source) {

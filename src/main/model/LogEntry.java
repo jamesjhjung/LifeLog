@@ -84,6 +84,12 @@ public class LogEntry {
 
     // EFFECTS: returns this entry as a JSONObject
     public JSONObject toJson() {
-        return null; // stub
+        JSONObject json = new JSONObject();
+        json.put("title", title);
+        json.put("category", category);
+        json.put("description", description);
+        json.put("hours", hours);
+        json.put("date", date.toString());
+        return json;
     }
 }

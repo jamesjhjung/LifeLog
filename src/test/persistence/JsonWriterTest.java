@@ -1,4 +1,5 @@
 package persistence;
+import ca.ubc.cs.ExcludeFromJacocoGeneratedReport;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 
 import java.io.IOException;
 
+@ExcludeFromJacocoGeneratedReport
 public class JsonWriterTest {
 
     @Test

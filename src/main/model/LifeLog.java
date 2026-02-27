@@ -3,6 +3,7 @@ package model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /*
@@ -95,6 +96,19 @@ public class LifeLog {
 
     // EFFECTS: returns this life log as a JSONObject
     public JSONObject toJson() {
-        return null; // stub
+        JSONObject json = new JSONObject();
+        json.put("entries", entriesToJson());
+        return json;
+    }
+
+    // EFFECTS: returns entries in this life log as a JSONArray
+    private JSONArray entriesToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (LogEntry entry : entries) {
+            jsonArray.put(entry.toJson());
+        }
+
+        return jsonArray;
     }
 }

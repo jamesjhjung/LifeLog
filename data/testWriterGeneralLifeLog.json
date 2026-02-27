@@ -1,0 +1,16 @@
+{"entries": [
+    {
+        "date": "2025-02-01",
+        "hours": 2,
+        "description": "CPSC-210",
+        "title": "Study",
+        "category": "School"
+    },
+    {
+        "date": "2025-02-02",
+        "hours": 1,
+        "description": "Leg day",
+        "title": "Gym",
+        "category": "Health"
+    }
+]}

@@ -1,4 +1,5 @@
 package ui;
+import ca.ubc.cs.ExcludeFromJacocoGeneratedReport;
 
 import model.LifeLog;
 import model.LogEntry;
@@ -6,6 +7,7 @@ import model.LogEntry;
 import java.time.LocalDate;
 import java.util.Scanner;
 
+@ExcludeFromJacocoGeneratedReport
 public class LifeLogApp {
 
     private LifeLog lifeLog;
