@@ -2,6 +2,8 @@ package model;
 
 import java.time.LocalDate;
 
+import org.json.JSONObject;
+
 /*
  * Represents a single record in the LifeLog application.
  * A LogEntry captures information about one logged activity,
@@ -78,5 +80,10 @@ public class LogEntry {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    // EFFECTS: returns this entry as a JSONObject
+    public JSONObject toJson() {
+        return null; // stub
     }
 }

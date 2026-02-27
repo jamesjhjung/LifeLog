@@ -3,6 +3,8 @@ package model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import org.json.JSONObject;
+
 /*
  * Represents a collection of LogEntry objects.
  * A LifeLog stores and manages an arbitrary number
@@ -89,5 +91,10 @@ public class LifeLog {
             }
         }
         return categoryTotalHours;
-    }    
+    }
+
+    // EFFECTS: returns this life log as a JSONObject
+    public JSONObject toJson() {
+        return null; // stub
+    }
 }
