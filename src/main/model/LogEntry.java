@@ -34,11 +34,11 @@ public class LogEntry {
     // EFFECTS: returns string representation of this entry
     public String toString() {
         String entryString = 
-        title + " | " + 
-        category + " | " + 
-        description + " | " + 
-        Double.toString(hours) + " Hours" 
-        + " | " + date.toString();
+                title + " | "
+                + category + " | " 
+                + description + " | "
+                + Double.toString(hours) + " Hours" 
+                + " | " + date.toString();
         return entryString;
     }
 

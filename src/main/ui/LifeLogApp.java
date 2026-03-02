@@ -1,4 +1,5 @@
 package ui;
+
 import ca.ubc.cs.ExcludeFromJacocoGeneratedReport;
 
 import model.LifeLog;
@@ -30,6 +31,7 @@ public class LifeLogApp {
         runApp();
     }
 
+    @SuppressWarnings("methodlength")
     private void runApp() {
         boolean running = true;
         while (running) {
