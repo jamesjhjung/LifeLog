@@ -28,3 +28,30 @@ This application is intended for **general users** who want a simple and flexibl
 - **As a user, I want to have the option to save my entire LifeLog to a file**, so that I can resume tracking my activities later.
 
 - **As a user, I want to have the option to load my previously saved LifeLog**, so that I can continue where I left off.
+
+## Instructions for End User
+
+- You can view the panel that displays the Xs that have already been added to the Y by:
+  - Opening the app; the center panel (a scrollable list) will display all entries currently in your LifeLog. 
+  - Each entry shows the title, category, description, hours, and date.
+
+- You can generate the first required action related to the user story "adding multiple Xs to a Y" by:
+  - Clicking the “Add Entry” button at the bottom of the window. 
+  - A dialog will prompt you to enter the Title, Category, Description, Hours, and Date. 
+  - Once submitted, the new entry will appear in the list.
+
+- You can generate the second required action related to the user story "adding multiple Xs to a Y" by:
+  - Clicking either the “Filter by Category” or “Filter by Date” buttons.
+  - Enter a category or a date (YYYY-MM-DD) to display a subset of entries that match the specified criterion.
+
+- You can locate my visual component by:
+  - Viewing the banner image at the top of the application window. 
+  - The banner (LifeLogBanner.png) visually represents time tracking productivity, and logging activities.
+
+- You can save the state of my application by:
+  - Clicking the “Save” button at the bottom of the window. 
+  - This writes the current LifeLog to ./data/lifelog.json.
+
+- You can reload the state of my application by:
+  - Clicking the “Load” button at the bottom of the window. 
+  - This reads the LifeLog from ./data/lifelog.json and updates the display panel.
