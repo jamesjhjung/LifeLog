@@ -11,6 +11,7 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 @ExcludeFromJacocoGeneratedReport
+// Represents the LifeLog application for main UI
 public class LifeLogApp {
 
     private LifeLog lifeLog;
@@ -21,6 +22,9 @@ public class LifeLogApp {
 
     private static final String JSON_STORE = "./data/lifelog.json";
 
+    // MODIFIES: this
+    // EFFECTS:  constructs a LifeLogApp object, initializes LifeLog, Scanner,
+    //           JsonReader, JsonWriter and starts the command-line application
     public LifeLogApp() {
         lifeLog = new LifeLog();
         scanner = new Scanner(System.in);
@@ -32,6 +36,9 @@ public class LifeLogApp {
     }
 
     @SuppressWarnings("methodlength")
+    // MODIFIES: this
+    // EFFECTS:  runs the main application loop, displaying menu options and
+    //           responding to user commands until the user chooses to quit
     private void runApp() {
         boolean running = true;
         while (running) {
@@ -72,6 +79,7 @@ public class LifeLogApp {
         }
     }
 
+    // EFFECTS:  prints the main menu for the LifeLog app to the console
     private void displayMenu() {
         System.out.println("\nLifeLog Menu:");
         System.out.println("1 - Add Entry");
@@ -86,6 +94,11 @@ public class LifeLogApp {
         System.out.print("Select option: ");
     }
 
+    // REQUIRES: user inputs - non-empty title, non-empty category,
+    //                         hours >= 0, date in YYYY-MM-DD format
+    // MODIFIES: lifeLog
+    // EFFECTS:  prompts user for LogEntry details, constructs a LogEntry,
+    //           and adds to lifeLog. Prints confirmation of addition
     private void addEntry() {
         System.out.print("Title: ");
         String title = scanner.nextLine();
@@ -108,6 +121,10 @@ public class LifeLogApp {
         System.out.println("Entry added.");
     }
 
+    // REQUIRES: user inputs valid title and date in YYYY-MM-DD format
+    // MODIFIES: lifeLog
+    // EFFECTS:  removes the first LogEntry in lifeLog that matches the given
+    //           title and date. Prints confirmation of removal
     private void removeEntry() {
         System.out.print("Title: ");
         String title = scanner.nextLine();
@@ -120,12 +137,15 @@ public class LifeLogApp {
         System.out.println("Remove operation complete.");
     }
 
+    // EFFECTS:  prints all LogEntry objects stored in lifeLog in order added
     private void viewEntries() {
         for (LogEntry e : lifeLog.getEntries()) {
             System.out.println(e);
         }
     }
 
+    // REQUIRES: user inputs date in YYYY-MM-DD format
+    // EFFECTS:  prints all LogEntry objects in lifeLog matching the given date.
     private void viewEntriesByDate() {
         System.out.print("Date (YYYY-MM-DD): ");
         String date = scanner.nextLine();
@@ -136,6 +156,8 @@ public class LifeLogApp {
         }
     }
 
+    // REQUIRES: user inputs non-empty category string
+    // EFFECTS:  prints all LogEntry objects in lifeLog matching given string
     private void viewEntriesByCategory() {
         System.out.print("Category: ");
         String category = scanner.nextLine();
@@ -145,12 +167,17 @@ public class LifeLogApp {
         }
     }
 
+    // EFFECTS:  calculates and prints the total hours of all LogEntry objects
+    //           in lifeLog
     private void viewTotalHours() {
         double totalHours = lifeLog.getTotalHours();
         System.out.println("Total hours logged: " + totalHours);
 
     }
 
+    // MODIFIES: JSON_STORE file
+    // EFFECTS:  saves the current LifeLog object to JSON_STORE using JsonWriter.
+    //           prints success or failure message
     private void saveLifeLog() {
         try {
             jsonWriter.open();
@@ -162,6 +189,9 @@ public class LifeLogApp {
         }
     }
 
+    // MODIFIES: this, lifeLog
+    // EFFECTS:  load the LifeLog object from JSON_STORE using JsonReader and
+    //           replaces the current lifeLog. Prints success or failure message.
     private void loadLifeLog() {
         try {
             lifeLog = jsonReader.read();
