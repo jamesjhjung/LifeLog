@@ -55,3 +55,9 @@ This application is intended for **general users** who want a simple and flexibl
 - You can reload the state of my application by:
   - Clicking the “Load” button at the bottom of the window. 
   - This reads the LifeLog from ./data/lifelog.json and updates the display panel.
+
+## Phase 4: Task 2:
+- Added entry: Homework | School | CPSC-210 | 2.0 Hours | 2026-03-26
+- Added entry: Gym | Health | Back day | 1.0 Hours | 2026-03-26
+- Viewed entries by category: School
+- Viewed entries by date: 2026-03-26

@@ -12,6 +12,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 
+import model.Event;
+import model.EventLog;
+
 // Represents the main GUI window for LifeLog
 public class MainFrame extends JFrame {
 
@@ -38,6 +41,13 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
+
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent e) {
+                printEventLog();
+            }
+        });
     }
 
     @SuppressWarnings("methodlength")
@@ -198,6 +208,13 @@ public class MainFrame extends JFrame {
             JOptionPane.showMessageDialog(this, "Loaded successfully!");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Load failed.");
+        }
+    }
+
+    // EFFECTS: prints all logged events to console
+    private void printEventLog() {
+        for (Event event : EventLog.getInstance()) {
+            System.out.println(event.toString());
         }
     }
 }

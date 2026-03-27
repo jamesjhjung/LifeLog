@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import model.Event;
+import model.EventLog;
+
 /*
  * Represents a collection of LogEntry objects.
  * A LifeLog stores and manages an arbitrary number
@@ -28,6 +31,9 @@ public class LifeLog {
     // EFFECTS: adds given entry to log
     public void addEntry(LogEntry entry) {
         entries.add(entry);
+        EventLog.getInstance().logEvent(
+            new Event("Added entry: " + entry.toString())
+        );
     }
 
     // MODIFIES: this
@@ -38,6 +44,11 @@ public class LifeLog {
             LogEntry e = entries.get(i);
             if (e.getTitle().equals(title) && e.getDate().equals(date)) {
                 entries.remove(i);
+
+                EventLog.getInstance().logEvent(
+                    new Event("Removed entry: " + e.toString())
+                );
+
                 break;
             }
         }
@@ -51,6 +62,10 @@ public class LifeLog {
     // EFFECTS: returns list of entries added in
     //          order of given category in log
     public ArrayList<LogEntry> getEntriesByCategory(String category) {
+        EventLog.getInstance().logEvent(
+            new Event("Viewed entries by category: " + category)
+        );
+
         ArrayList<LogEntry> categoryEntries = new ArrayList<>();
         for (LogEntry e : entries) {
             if (e.getCategory().equals(category)) {
@@ -63,6 +78,10 @@ public class LifeLog {
     // EFFECTS: returns list of entries added in
     //          order of given date in log
     public ArrayList<LogEntry> getEntriesByDate(LocalDate date) {
+        EventLog.getInstance().logEvent(
+            new Event("Viewed entries by date: " + date.toString())
+        );
+
         ArrayList<LogEntry> dateEntries = new ArrayList<>();
         for (LogEntry e : entries) {
             if (e.getDate().equals(date)) {
@@ -75,6 +94,10 @@ public class LifeLog {
     // EFFECTS: returns total hours spent across 
     //          all entries
     public double getTotalHours() {
+        EventLog.getInstance().logEvent(
+            new Event("Calculated total hours")
+        );
+
         double totalHours = 0.0;
         for (LogEntry e : entries) {
             totalHours += e.getHours();
