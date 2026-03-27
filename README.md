@@ -61,3 +61,7 @@ This application is intended for **general users** who want a simple and flexibl
 - Added entry: Gym | Health | Back day | 1.0 Hours | 2026-03-26
 - Viewed entries by category: School
 - Viewed entries by date: 2026-03-26
+
+## Phase 4: Task 3
+- One potential refactoring I would consider is improving the separation of concerns between the model and persistence layers. Currently, the JsonReader and JsonWriter interact directly with the LifeLog class, which tightly couples persistence logic with the core model. If I had more time, I would introduce an abstraction (such as an interface or service layer) to decouple file handling from the LifeLog model. This would improve flexibility and make it easier to extend the application to support other forms of storage, such as databases or cloud-based systems.
+- Another possible refactoring would involve improving the responsibilities of the LifeLog class. At the moment, LifeLog manages storage, querying, and event logging, which could be separated further to follow the Single Responsibility Principle more closely. For example, filtering and analytics operations (such as retrieving entries by category or calculating total hours) could be moved into a separate service class. This would make the model simpler, easier to maintain, and more scalable as the application grows.
